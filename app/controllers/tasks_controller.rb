@@ -33,7 +33,8 @@ class TasksController < ApplicationController
     @task.task_user = @current_user.id
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: '新しいタスクを作りました' }
+        flash[:notice] = "新しいタスクを追加しました"
+        format.html { redirect_to @task}
         format.json { render :show, status: :created, location: @task }
         format.js
         redirect_to("/tasks")
@@ -50,7 +51,8 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'タスクを編集しました' }
+        flash[:notice] = "タスクを編集しました"
+        format.html { redirect_to @task }
         format.json { render :show, status: :ok, location: @task }
         format.js
         redirect_to("/tasks")
@@ -67,7 +69,8 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'タスクを削除しました' }
+      flash[:notice] = "タスクを削除しました"
+      format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
   end
