@@ -36,6 +36,7 @@ class TasksController < ApplicationController
         format.html { redirect_to @task, notice: '新しいタスクを作りました' }
         format.json { render :show, status: :created, location: @task }
         format.js
+        redirect_to("/tasks")
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -52,6 +53,7 @@ class TasksController < ApplicationController
         format.html { redirect_to @task, notice: 'タスクを編集しました' }
         format.json { render :show, status: :ok, location: @task }
         format.js
+        redirect_to("/tasks")
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }

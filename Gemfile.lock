@@ -126,6 +126,8 @@ GEM
     rails-i18n (5.1.1)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (5.1.5)
       actionpack (= 5.1.5)
       activesupport (= 5.1.5)
@@ -196,12 +198,12 @@ DEPENDENCIES
   fullcalendar-rails
   jbuilder (~> 2.5)
   jquery-rails
-  jquery-ui-rails
   listen (>= 3.0.5, < 3.2)
   momentjs-rails
   puma (~> 3.7)
   rails (~> 5.1.5)
   rails-i18n
+  rails-ujs
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

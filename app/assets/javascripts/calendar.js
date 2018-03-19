@@ -1,52 +1,54 @@
-$(document).ready(function() {
-  var create = function(start, end) {
-    var data = {event: {start: start.format(),
-      end: end.format(),
-      allDay: !start.hasTime()
-    }};
+function eventCalendar() {
+  var create = function (start, end) {
+    var data = {
+      event: {
+        start: start.format(),
+        end: end.format(),
+        allDay: !start.hasTime()
+      }
+    };
     $.ajax({
       type: "GET",
       url: "/events/new.js",
       data: data
-    }).done(function() {
-      $(document).ready();
-    });
-    $('#id02').on('ajax:success', function(event) {
-      calendar.fullCalendar('refetchEvents');
-      calendar.fullCalendar('unselect');
+    }).then(function () {
+      $(document).on('ajax:success', '#id02', function () {
+        calendar.fullCalendar('refetchEvents');
+        calendar.fullCalendar('unselect');
+      });
     });
   };
 
-  var update = function(event) {
+  var update = function (event) {
     $.ajax({
       type: "GET",
       url: `/events/${event.id}/edit.js`
-    }).done(function() {
-      $(document).ready();
-    });;
-    $('#id02').on('ajax:success', function(event) {
-      calendar.fullCalendar('refetchEvents');
+    }).then(function () {
+      $(document).on('ajax:success', '#id02', function () {
+        calendar.fullCalendar('refetchEvents');
+      });
     });
   };
 
-  var update_datetime = function(event) {
-    var data = {event: {allDay: event.allDay,
-      start: moment(event.start).format(),
-      end: moment(event.end).format()
-    }};
+  var update_datetime = function (event) {
+    var data = {
+      event: {
+        allDay: event.allDay,
+        start: moment(event.start).format(),
+        end: moment(event.end).format()
+      }
+    };
     $.ajax({
       type: "PATCH",
-      url: `/events/${event.id}.js`,
+      url: `/events/${event.id}.json`,
       data: data
-    }).done(function() {
+    }).then(function () {
       calendar.fullCalendar('refetchEvents');
     });
   };
 
-$('#calendar').fullCalendar('removeEvents');
 
-
-  var calendar = $('#calendar').fullCalendar({
+  var calendar = $('#event_calendar').fullCalendar({
     header: {
       left: 'today,prev,next',
       center: 'title',
@@ -68,4 +70,12 @@ $('#calendar').fullCalendar('removeEvents');
     eventDrop: update_datetime,
     eventResize: update_datetime
   });
-});
+
+  return calendar;
+};
+function clearCalendar() {
+  $('#event_calendar').fullCalendar('delete'); // In case delete doesn't work.
+  $('#event_calendar').html('');
+};
+$(document).on('turbolinks:load', eventCalendar);
+$(document).on('turbolinks:before-cache', clearCalendar);
