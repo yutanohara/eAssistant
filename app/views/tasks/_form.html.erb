@@ -13,12 +13,12 @@
   <div class="container">
   <div class="field">
     <%= form.label :task_name %>
-    <%= form.text_field :task_name, id: :task_task_name, required: true %>
+    <%= form.text_field :task_name, id: :task_task_name, placeholder: "Enter the task name", required: true %>
   </div>
 
   <div class="field">
     <%= form.label :deadline_date %>
-    <%= form.date_field :deadline_date, id: :task_deadline_date, value: Date.today ,required: false %>
+    <%= form.date_field :deadline_date, id: :task_deadline_date, value: Date.today, required: false %>
     <%= form.time_select :deadline_time, {minute_step: 5}, id: :task_deadline_time, required: true %>
   </div>
 

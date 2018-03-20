@@ -32,7 +32,7 @@
     <% end %>
 
     <div class="square">
-      現在のタスクは「タスク名」である。<br>
+      現在のタスクは「タスク名」です。<br>
       残り時間：... <br>
       <%= @user.user_id%>さん、頑張ってください！
     </div>
@@ -40,13 +40,10 @@
       今日のスケジュール
     </div>
     <div class="tooltip">
-      <%= link_to 'タスク追加', new_task_path, remote: true %>
-      <button onclick="document.getElementById('id05').style.display='block'">新タスク</button>
-
+      <button onclick="document.getElementById('id05').style.display='block'"><%= link_to 'タスク追加', new_task_path, remote: true %></button>
+      <div id="task-form" ></div>
       <!-- Modal -->
-      <div id="task-form" >
 
-      </div>
     </div>
     <div class="calendar-container">
       <div id="event_calendar"></div>

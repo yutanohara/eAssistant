@@ -91,6 +91,44 @@ body, html {
   background: rgba(0, 0, 0, 0.75);
   padding: 20px;
 }
+@media (max-width: 740px) {
+  .welcome-message-container{
+    position: relative;
+    margin: auto;
+    padding-top:10%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .welcome-message {
+    text-align: center;
+    font-size: 200%;
+    font-weight: 300;
+    margin-left: 10%;
+    margin-right: 20%;
+    padding-top: 10%;
+  }
+  .welcome-submessage {
+    text-align: center;
+    font-size: 85%;
+    font-weight: 300;
+    margin-left: 10%;
+    margin-top: 1%;
+  }
+
+  .welcome-message text {
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px;
+  }
+  .welcome-submessage text{
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 8px;
+  }
+}
+
+
 
 .login-container {
   position: relative;
@@ -106,6 +144,13 @@ body, html {
   font-size: 500%;
   font-weight: 300;
 
+}
+@media (max-width: 450px){
+  .title {
+    text-align: center;
+    font-size: 300%;
+    font-weight: 250;
+  }
 }
 
 .subtitle {
@@ -200,7 +245,7 @@ span.psw {
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 20px;
-  
+
 }
 
 
@@ -345,7 +390,22 @@ span.psw {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
+@media (max-width: 450px) {
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 30px;
+  }
 
+}
 /* The Close Button */
 .close {
   /* Position it in the top right corner outside of the modal */
@@ -471,11 +531,11 @@ table#tsk {
   border-spacing:0px
 }
 table#tsk tr th, table#tsk tr td {
-	text-align:center;
-	font-size:12px;
-	border-bottom:1px solid #ccc;
-	border-right:1px solid #ccc;
-	padding: 3px
+  text-align:center;
+  font-size:12px;
+  border-bottom:1px solid #ccc;
+  border-right:1px solid #ccc;
+  padding: 3px
 }
 table#tsk thead tr {background: #0FF}
 table#tsk tbody tr {background: #f1f8ff}
