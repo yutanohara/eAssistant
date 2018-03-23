@@ -16,26 +16,10 @@
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/lang/ja
+//= require jquery-tablesorter
 //= require_tree .
 
 $(function() {
   $('.flash').fadeOut(3000);
 
-  // $('.modal-content').click(function () {
-  //   // 背景がクリックされたら、ウィンドウを閉じる
-  //   $('.modal-content').hide();
-  //   return false;
-  // });
-  //
-  // $('.container').click(function (event) {
-  //   // ウィンドウの中身をクリックしても、閉じないようにする
-  //   // (親である .windowBg への伝播を止める)
-  //   event.stopPropagation();
-  // });
-  //
-  // $('.close').click(function (event) {
-  //   // 閉じるボタンのイベントをキャンセルする
-  //   // (親である .windowBg への伝播は行う → ウィンドウは閉じられる)
-  //   event.preventDefault();
-  // });
 });

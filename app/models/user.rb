@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   validates :user_id, presence: true, uniqueness: {message: "：このログイン名はすでに存在します"}
   validates :password,
     presence: true,
@@ -9,5 +10,5 @@ class User < ApplicationRecord
     uniqueness: {message: "：このEメールは使われています"}
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-  
+
 end

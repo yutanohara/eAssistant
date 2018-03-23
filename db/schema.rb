@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318150427) do
+ActiveRecord::Schema.define(version: 20180323134658) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20180318150427) do
 
   create_table "users", force: :cascade do |t|
     t.text "user_id"
-    t.text "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "user_image"
+    t.string "password_digest"
   end
 
 end

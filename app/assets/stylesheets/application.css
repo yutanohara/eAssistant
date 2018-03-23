@@ -1,5 +1,7 @@
 /*
 *= require fullcalendar
+*= require jquery-tablesorter/theme.green
+*= require jquery-tablesorter/addons/pager/jquery.tablesorter.pager
 *= require_tree .
 *= require_self
 */
@@ -537,5 +539,5 @@ table#tsk tr th, table#tsk tr td {
   border-right:1px solid #ccc;
   padding: 3px
 }
-table#tsk thead tr {background: #0FF}
-table#tsk tbody tr {background: #f1f8ff}
+/* table#tsk thead tr {background: #0FF}
+table#tsk tbody tr {background: #f1f8ff} */

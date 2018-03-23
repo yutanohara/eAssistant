@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-
-  # before_action :authenticate_user, {only: [:show, :edit, :update, :edit_form]}
-  # before_action :forbid_login_user, {only: [:new, :create, :login]}
-  # before_action :ensure_correct_user, {only: [:edit, :update]}
+  before_action :authenticate_user, {only: [:show, :edit, :update, :edit_form]}
+  before_action :ensure_correct_user, {only: [:edit, :update]}
 
   def show
     @user = User.find_by(id: params[:id])
@@ -51,12 +49,12 @@ class UsersController < ApplicationController
     flash[:notice] = "ログアウトしました"
     redirect_to("/")
   end
-  # def ensure_correct_user
-  #   if @current_user.id != params[:id].to_i
-  #     flash[:notice] = "権限がありません"
-  #     redirect_to("/users/#{@current_user.id}")
-  #   end
-  # end
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/users/#{@current_user.id}")
+    end
+  end
 
 
 end
