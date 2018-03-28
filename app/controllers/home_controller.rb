@@ -1,9 +1,5 @@
 class HomeController < ApplicationController
-<<<<<<< HEAD
   before_action :forbid_login_user, {only: [:new, :create, :login]}
-=======
-  before_action :forbid_login_user, {only: [:new, :create]}
->>>>>>> origin/master
   def top
     @user = User.find_by(user_id: params[:user_id])
 

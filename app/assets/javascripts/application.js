@@ -23,7 +23,6 @@ $(function() {
   $('.flash').fadeOut(3000);
 
 });
-<<<<<<< HEAD
 
 function dropdownfunction() {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -60,5 +59,3 @@ $(document).ready(function(){
 	});
 
 });
-=======
->>>>>>> origin/master
