@@ -1,14 +1,23 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:show, :edit, :update, :edit_form]}
+<<<<<<< HEAD
   before_action :ensure_correct_user, {only: [:edit, :update, :show]}
+=======
+  before_action :ensure_correct_user, {only: [:edit, :update]}
+>>>>>>> origin/master
 
   def show
     @user = User.find_by(id: params[:id])
   end
 
   def login
+<<<<<<< HEAD
     @user = User.find_by(user_id: params[:user_id])
     if @user && @user.authenticate(params[:password])
+=======
+    @user = User.find_by(user_id: params[:user_id], password: params[:password])
+    if @user
+>>>>>>> origin/master
       session[:user_id] = @user.id
       flash[:notice] = "ログインに成功しました"
       redirect_to("/users/#{@user.id}")

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180328054433) do
+=======
+ActiveRecord::Schema.define(version: 20180323134658) do
+>>>>>>> origin/master
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -25,7 +29,11 @@ ActiveRecord::Schema.define(version: 20180328054433) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "task_name"
+<<<<<<< HEAD
     t.datetime "deadline_date"
+=======
+    t.date "deadline_date"
+>>>>>>> origin/master
     t.time "deadline_time"
     t.time "required_time"
     t.integer "priority"

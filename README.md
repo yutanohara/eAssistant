@@ -23,4 +23,7 @@ Things you may want to cover:
 
 * ...
 # eAssistant
+<<<<<<< HEAD
 # e-Assistant
+=======
+>>>>>>> origin/master

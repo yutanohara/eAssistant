@@ -18,8 +18,13 @@
 
   <div class="field">
     <%= form.label :deadline_date %>
+<<<<<<< HEAD
     <%= form.datetime_field :deadline_date, id: :task_deadline_date, value: Date.today, required: false %>
     <!-- <%= form.time_select :deadline_time, {minute_step: 5}, id: :task_deadline_time, required: true %> -->
+=======
+    <%= form.date_field :deadline_date, id: :task_deadline_date, value: Date.today, required: false %>
+    <%= form.time_select :deadline_time, {minute_step: 5}, id: :task_deadline_time, required: true %>
+>>>>>>> origin/master
   </div>
 
   <div class="field">
