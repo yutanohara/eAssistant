@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/img/logo.png">
+  <link rel="stylesheet" type="text/css" href="application.css">
+  <script type="text/javascript" src="application.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    e-Assistant
+  </title>
+</head>
+<body>
+
+  <!-- <a href="#" class="add">Scroll To Top</a> -->
+  
+  <div class="bgline"></div>
+  <div class="top-bar">
+    Welcome back, <%= @user.user_id %>!
+    <div class="dropdown">
+      <div onclick="dropdownfunction()" class="arrow-down" tabindex="2"></div>
+      <div id="myDropdown" class="dropdown-content">
+        <%= link_to("タスク一覧", "/tasks")%>
+        <%= link_to("プロフィール", "/users/#{@user.id}/edit")%>
+        <%= link_to("ログアウト", "/logout", {method: :post})%>
+      </div>
+    </div>
+  </div>
+  <a href="<%= "/users/#{@current_user.id}" %>"><img class="logo" src="/img/logo-circle.png"></a>
+  <br><br>
+  <% if @user.user_image %>
+  <img class="circle" id="user_img" src="<%= "/img/#{@user.id}.jpg"%>" >
+  <% else %>
+  <img class="circle" id="user_img" src="/img/user.png">
+  <% end %>
+  <!-- <div class="square">
+    現在のタスクは「タスク名」です。<br>
+    残り時間：... <br>
+    <%= @user.user_id%>さん、頑張ってください！
+  </div> -->
+  <div class="tooltip">
+    <button-top onclick="document.getElementById('id05').style.display='block'"><%= link_to 'タスク追加', new_task_path, remote: true %></button-top>
+    <div id="task-form"></div>
+  </div>
+  <div class="main-container">
+    <br>
+    <div id="event_calendar"></div>
+    <div id="calendar-form"></div>
+  </div>
+  <br><br><br><br>
+</body>
+</html>
