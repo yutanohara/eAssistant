@@ -11,21 +11,22 @@
   </title>
 </head>
 <body>
-
   <!-- <a href="#" class="add">Scroll To Top</a> -->
-
-  <div class="bgline"></div>
-  <div class="top-bar">
-    Welcome back, <%= @user.user_id %>!
-    <div class="dropdown">
-      <div onclick="dropdownfunction()" class="arrow-down" tabindex="2"></div>
-      <div id="myDropdown" class="dropdown-content">
-        <%= link_to("タスク一覧", "/tasks")%>
-        <%= link_to("プロフィール", "/users/#{@user.id}/edit")%>
-        <%= link_to("ログアウト", "/logout", {method: :post})%>
-      </div>
-    </div>
+  <div id="topbar" onclick="openNav()" class="top-bar">
+      Welcome back, <%= @user.user_id %>! &#9668;
   </div>
+  <div id="SideNav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <% if @user.user_image %>
+    <img class="circle" id="user_img" src="<%= "/img/#{@user.id}.jpg"%>" >
+    <% else %>
+    <img class="circle" id="user_img" src="/img/user.png">
+    <% end %>
+    <%= link_to("タスク一覧", "/tasks")%>
+    <%= link_to("プロフィール", "/users/#{@user.id}/edit")%>
+    <%= link_to("ログアウト", "/logout", {method: :post})%>
+  </div>
+  <div class="bgline"></div>
   <a href="<%= "/users/#{@current_user.id}" %>"><img class="logo" src="/img/logo-circle.png"></a>
   <div class="main-container">
     <div id="user-info" class="tabcontent">

@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require lib/jquery.min
 //= require rails-ujs
 //= require turbolinks
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/lang/ja
+//= require lib/moment.min
+//= require fullcalendar.min
+//= require locale/ja
 //= require jquery-tablesorter
 //= require_tree .
 
@@ -59,3 +59,23 @@ $(document).ready(function(){
 	});
 
 });
+
+/////////////////////
+// Side Navigation //
+/////////////////////
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+var navwidth;
+
+function openNav() {
+    document.getElementById("SideNav").style.width = "32%";
+    document.getElementById("topbar").style.width = "0";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("SideNav").style.width = "0";
+    document.getElementById("topbar").style.width = "32%";
+}
+///////////
+// Modal //
+///////////
