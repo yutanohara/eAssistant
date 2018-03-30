@@ -58,15 +58,8 @@
         <tr>
           <td><%= link_to task.task_name, edit_task_path(task), remote: true %></td>
           <td><%= task.deadline_date%></td>
-          <!-- <% if(task.required_time.hour == 0)%>
-          <td><%= task.required_time.min %>分</td>
-          <% else %>
-          <% end %> -->
           <td><%= task.required_time.hour %>時間<%= task.required_time.min %>分</td>
           <td><%= task.priority %></td>
-          <!-- <td><%= task.color %></td>
-          <td><%= task.comment %></td> -->
-
         </tr>
         <% end %>
         <% end %>
