@@ -10,14 +10,42 @@
     <bodytop>
         <div class="navigation">
             <ul>
-                <li><a href="top.html">Home</a></li>
-                <li><a href="top.html">About Us</a></li>
-                <li><a href="top.html">Contact</a></li>
+                <li><a onclick="document.getElementById('about').style.display='block'">Abous Us</a></li>
+                <li><a onclick="document.getElementById('contact').style.display='block'">Contact</a></li>
             </ul>
+        </div>
+        <div id="about" class="modal">
+          <span onclick="document.getElementById('about').style.display='none'"
+          class="close" id="about-close" title="Close Modal">&times;</span>
+          <div class="modal-content animate">
+            <div id="form-container" class="container">
+              <img class="logo" src="/img/logo-circle.png">
+              <h1>E-Assistant</h1>
+                <p style="margin-left:5em; margin-right:5em;" align="center">
+                E-Assistantはごく普通のタスクとスケジュール管理のウェブアプリである。<br>
+                ３人の電通生が2018年の春休みに作成した。<br>
+                タスクを管理するのが苦手な人をメインターゲットユーザーとする。<br>
+                優先度や締め切りに基づくソート機能で、タスクを可視化する。</p>
+            </div>
+          </div>
+        </div>
+        <div id="contact" class="modal">
+          <span onclick="document.getElementById('contact').style.display='none'"
+          class="close" id="contact-close" title="Close Modal">&times;</span>
+          <div class="modal-content animate">
+            <div id="form-container" class="container">
+              <img class="logo" src="/img/logo-circle.png">
+              <h1>Contact Us</h1>
+                <p style="margin-left:5em; margin-right:5em;" align="center">
+                To contact us, please send us an email at eassistant@gmail.com. <br>
+                (This is not a real email address.)
+              </p>
+            </div>
+          </div>
         </div>
         <div class="top-background">
             <div class="welcome-message-container">
-                <div class="welcome-message"><text><i>e-Assistant<br></i></text></div>
+                <div class="welcome-message"><text><i>E-Assistant<br></i></text></div>
                 <div class="welcome-submessage"><text><i>The easiest way to plan your day<br></i></text></div>
                 <br><br><br>
                 <a href="/home/login"><button type="submit">ログイン</button></a>

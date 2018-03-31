@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery-ui
 //= require lib/jquery.min
 //= require rails-ujs
 //= require turbolinks
@@ -88,7 +89,7 @@ $(document).click(function(event) {
   // event.targetをjQueryオブジェクトに変換する
   // closest()を使って自分から先祖要素までinnerクラスがある要素を選択する
   if(!$(event.target).closest('.modal-content').length) {
-    document.getElementById('id05').style.display='none';
+    document.getElementById('id01').style.display='none';
   }
 });
 

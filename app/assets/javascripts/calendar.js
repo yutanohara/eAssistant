@@ -49,6 +49,7 @@ function eventCalendar() {
 
 
   var calendar = $('#calendar').fullCalendar({
+    themeSystem: 'jquery-ui',
     header: {
       left: 'today,prev,next',
       center: 'title',
@@ -56,7 +57,7 @@ function eventCalendar() {
     },
     events: '/events.json',
     locale: 'ja',
-    defaultView: 'month',
+    defaultView: 'agendaWeek',
     height: 'auto',
     nowIndicator: true,
     selectable: true,
@@ -64,7 +65,6 @@ function eventCalendar() {
     editable: true,
     eventOverlap: false,
     snapDuration: '00:05:00',
-    ignoreTimezone: false,
     select: create,
     eventClick: update,
     eventDrop: update_datetime,

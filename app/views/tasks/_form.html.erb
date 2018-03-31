@@ -1,4 +1,4 @@
-<%= form_with(model: task, local: true, data: {remote: true}) do |form| %>
+<%= form_with(model: task, local: true) do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -10,20 +10,20 @@
       </ul>
     </div>
   <% end %>
-  <div class="container">
+
   <div class="field">
     <%= form.label :task_name %>
-    <%= form.text_field :task_name, id: :task_task_name, placeholder: "Enter the task name", required: true %>
+    <%= form.text_field :task_name, id: :task_task_name %>
   </div>
 
   <div class="field">
-    <%= form.label :deadline_date %>
-    <%= form.datetime_select :deadline_date, {minute_step: 5}, id: :task_deadline_date, value: Date.today, required: false %>
+    <%= form.label "締切日時" %>
+    <%= form.datetime_select :deadline, {minute_step: 5}, id: :task_deadline, value: Date.today, required: false %>
   </div>
 
   <div class="field">
-    <%= form.label :required_time %>
-    <%= form.time_select :required_time, {minute_step: 5, :default => {:hour => '0', :minute => '0'}},  id: :task_required_time, required: true %>
+    <%= form.label "かかる時間(分)" %>
+    <%= form.number_field :required_time, id: :task_required_time %>
   </div>
 
   <div class="field">
@@ -44,5 +44,4 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-</div>
 <% end %>

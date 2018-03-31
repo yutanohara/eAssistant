@@ -30,15 +30,21 @@
     <div class="bgline"></div>
     <a href="<%= "/users/#{@current_user.id}" %>"><img class="logo" src="/img/logo-circle.png"></a>
     <div class="tooltip">
-      <button-top onclick="document.getElementById('id05').style.display='block'"><%= link_to 'タスク追加', new_task_path, remote: true %></button-top>
-      <div id="task-form"></div>
+      <button-top><%= link_to 'タスク追加', new_task_path, remote: true %></button-top>
+      <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="close" id="id01-close" title="Close Modal">&times;</span>
+        <div class="modal-content animate">
+          <div id="task-container" class="container"></div>
+        </div>
+      </div>
     </div>
     <div class="main-container">
       <h1>タスク一覧</h1>
-      <div id="task-form"></div>
       <table id="tsk" class="tablesorter">
         <thead>
           <tr>
+            <th>色</th>
             <th>タスク名</th>
             <th>締切日時</th>
             <th>かかる時間</th>
@@ -52,9 +58,10 @@
           <% @tasks.each do |task| %>
           <% if(task.task_user.to_i == @current_user.id)%>
           <tr>
+            <td><font size="5%" color="<%= task.color%>">&#9829;</font></td>
             <td><%= link_to task.task_name, edit_task_path(task), remote: true %></td>
-            <td><%= task.deadline_date%></td>
-            <td><%= task.required_time.hour %>時間<%= task.required_time.min %>分</td>
+            <td><%= task.deadline%></td>
+            <td><%= task.required_time %>分</td>
             <td><%= task.priority %></td>
           </tr>
           <% end %>
@@ -69,4 +76,4 @@
 </html>
 <script type="text/javascript">
 
-</script>
+<%= link_to 'タスク追加', new_task_path %>
